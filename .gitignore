@@ -1,2 +1,7 @@
 /TriangleSides/nbproject/private/
 /TriangleSides/build/
+.classpath
+.project
+/TriangleSides/bin/
+/TriangleSides/build.xml
+/TriangleSides/manifest.mf
