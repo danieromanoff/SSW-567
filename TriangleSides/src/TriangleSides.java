@@ -1,68 +1,72 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Danielle
- */
 import javax.swing.JOptionPane;
-public class TriangleSides extends GeometricObject {
 
 
-	// Three double data fields named side1, side2, and side3 with default
-    // values 1.0 to denote three sides of the triangle.
-	private double side1 = 1, side2 = 1, side3 = 1;
-	// A no-arg constructor that creates a default triangle.
-	public TriangleSides()
+public class TriangleSides extends JOptionPane {
+	public static boolean Valid(String value)
 	{
-		
-	}
-	//  A constructor that creates a triangle with the specified side1, side2, and side3.
-	public TriangleSides(double s1, double s2, double s3) throws Exception
-	{
-		if(s1 >= s2+s3 || s2 >= s3+s1 || s3 >= s2+s1)
-		{
-			Exception error = new Exception(" Invalid Input! Enter sides do not form a triangle");
-			throw error;
-		}
+		if(value.equalsIgnoreCase("true") || value.equalsIgnoreCase("false"))
+			return true;
 		else
+			JOptionPane.showMessageDialog(null, "Invalid Input!! "+value+ "Enter either True or False", "error", JOptionPane.INFORMATION_MESSAGE);
+		return false;
+	}
+	public static boolean Verify(String value)
+	{
+		try
 		{
-			side1 = s1;
-			side2 = s2;
-			side3 = s3;
+			Double.parseDouble(value);
+			return true;
+		}
+		catch (Exception error)
+		{
+			JOptionPane.showMessageDialog(null,"Invalid Input: " + value +" Please enter a real number" ,"Error",JOptionPane.INFORMATION_MESSAGE);
+			return false;
 		}
 	}
-	// The accessor methods for all three data fields.
-	public double getSide1()
-	{
-		return side1;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int check = JOptionPane.YES_OPTION;
+		while(check == JOptionPane.YES_OPTION)
+		{
+			boolean repeat = true;
+			String value;
+			TriangleClass triangle = new TriangleClass();
+			JOptionPane.showMessageDialog(null, "The program should create a Triangle object with these sides and set"
+                                                + "\n the color and filled properties using the input. The program should display"
+                                                +"\n the area, perimeter, color, and true or false to indicate whether it is filled or not. ", "Description",JOptionPane.INFORMATION_MESSAGE);
+		while(repeat)
+		{
+			double s1,s2,s3;
+			do
+			{
+				value = JOptionPane.showInputDialog(null, "Enter Side 1 of the triangle: ", "side1", JOptionPane.QUESTION_MESSAGE);
+			}while(!Verify(value));
+			s1 = Double.parseDouble(value);
+			do
+			{
+				value = JOptionPane.showInputDialog(null, "Enter Side 2 of the triangle: ", "side2", JOptionPane.QUESTION_MESSAGE);
+			}while(!Verify(value));
+			s2 = Double.parseDouble(value);
+			do
+			{
+				value = JOptionPane.showInputDialog(null, "Enter Side 3 of the triangle: ", "side3", JOptionPane.QUESTION_MESSAGE);
+			}while(!Verify(value));
+			s3 = Double.parseDouble(value);
+			try
+			{
+				triangle = new TriangleClass(s1,s2,s3);
+				repeat = false;
+			}
+			catch(Exception error)
+			{
+				JOptionPane.showMessageDialog(null, error.getMessage(), "error", JOptionPane.INFORMATION_MESSAGE);
+			}
+		}
+		
+		JOptionPane.showMessageDialog(null,"The triangle is a ", "output", JOptionPane.INFORMATION_MESSAGE);
+		check = JOptionPane.showConfirmDialog(null, "Do you want to re-run the program? ");
+		
+		}
 	}
-	public double getSide2()
-	{
-		return side2;
-	}
-	public double getSide3()
-	{
-		return side3;
-	}
-	// A method named getArea() that returns the area of this triangle.
-	public double getArea()
-	{
-		double s = (side1+side2+side3)/2;
-		return Math.sqrt(s*(s-side1)*(s-side2)*(s-side3));
-	}
-	// A method named getPerimeter() that returns the perimeter of this triangle.
-	public double getPerimeter()
-	{
-		return side1+side2+side3;
-	}
-	// A method named toString() that returns a string description for the triangle.
-	public String toString()
-	{
-		return "Triangle Side1: "+side1+ " Side 2: "+side2+" Side 3: "+side3;
-	}
-}
 
+}
