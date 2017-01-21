@@ -40,9 +40,9 @@ public class TriangleTest extends JOptionPane {
 			boolean repeat = true;
 			String value;
 			TriangleSides triangle = new TriangleSides();
-			JOptionPane.showMessageDialog(null, "The program should create a Triangle object with these sides and set"
-                                                + "\n the color and filled properties using the input. The program should display"
-                                                +"\n the area, perimeter, color, and true or false to indicate whether it is filled or not. ", "Description",JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "The program will accept user input for the three sides of a triangle."
+                                                + "\n It will check the validity of the input to ensure the sides can form a triangle."
+                                                +"\n If it is a valid triangle, the program will determine what kind of triangle it is. ", "Description",JOptionPane.INFORMATION_MESSAGE);
 		while(repeat)
 		{
 			double s1,s2,s3;
