@@ -5,7 +5,7 @@ public class Triangle {
 		return "override me";
 	}
 	
-	public void Triangle(){
+	public Triangle(){
 		
 	}
 }
