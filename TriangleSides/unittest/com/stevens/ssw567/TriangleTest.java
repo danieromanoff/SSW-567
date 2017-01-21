@@ -21,7 +21,13 @@ public class TriangleTest {
 	@Test
 	public void scaleneTest1() {
 		assertEquals(TriangleType.SCALENE, triangle.classifyTriangle(1,2,3) );
+	}
+	@Test
+	public void scaleneTest2() {
 		assertEquals(TriangleType.SCALENE, triangle.classifyTriangle(3,2,1) );
+	}
+	@Test
+	public void scaleneTest3() {
 		assertEquals(TriangleType.SCALENE, triangle.classifyTriangle(2,1,3) );
 	}
 	
@@ -33,7 +39,13 @@ public class TriangleTest {
 	@Test
 	public void isoscelesTest1() {
 		assertEquals(TriangleType.ISOSCELES, triangle.classifyTriangle(2,2,1) );
+	}
+	@Test
+	public void isoscelesTest2() {
 		assertEquals(TriangleType.ISOSCELES, triangle.classifyTriangle(2,1,2) );
+	}
+	@Test
+	public void isoscelesTest3() {
 		assertEquals(TriangleType.ISOSCELES, triangle.classifyTriangle(1,2,2) );
 	}
 	
@@ -41,8 +53,11 @@ public class TriangleTest {
 	 * equilateral [all equal]
 	 */
 	@Test
-	public void equilateralTest() {
+	public void equilateralTest1() {
 		assertEquals(TriangleType.EQUILATERAL, triangle.classifyTriangle(3.23232,3.23232,3.23232) );
+	}
+	@Test
+	public void equilateralTest2() {
 		assertEquals(TriangleType.EQUILATERAL, triangle.classifyTriangle(0.1,0.1,0.1) );
 	}
 	
@@ -50,14 +65,35 @@ public class TriangleTest {
 	 * not triangle
 	 */
 	@Test
-	public void notTriangleTest() {
+	public void notTriangleTest1() {
 		assertEquals(TriangleType.NOT_TRIANGLE, triangle.classifyTriangle(-1, 1, 1) );
+	}
+	@Test
+	public void notTriangleTest2() {
 		assertEquals(TriangleType.NOT_TRIANGLE, triangle.classifyTriangle( 1,-1, 1) );
+	}
+	@Test
+	public void notTriangleTest3() {
 		assertEquals(TriangleType.NOT_TRIANGLE, triangle.classifyTriangle( 1, 1, -1) );
+	}
+	@Test
+	public void notTriangleTest4() {
 		assertEquals(TriangleType.NOT_TRIANGLE, triangle.classifyTriangle(-1,-1,-1) );
+	}
+	@Test
+	public void notTriangleTest5() {
 		assertEquals(TriangleType.NOT_TRIANGLE, triangle.classifyTriangle(0,0,0) );
+	}
+	@Test
+	public void notTriangleTest6() {
 		assertEquals(TriangleType.NOT_TRIANGLE, triangle.classifyTriangle(0,1,1) );
+	}
+	@Test
+	public void notTriangleTest7() {
 		assertEquals(TriangleType.NOT_TRIANGLE, triangle.classifyTriangle(1,0,1) );
+	}
+	@Test
+	public void notTriangleTest8() {
 		assertEquals(TriangleType.NOT_TRIANGLE, triangle.classifyTriangle(1,1,0) );
 	}
 
