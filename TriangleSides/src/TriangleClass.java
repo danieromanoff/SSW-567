@@ -66,6 +66,7 @@ public class TriangleSides
         System.out.println("Side 3: ");
         side3 = keyboard.nextInt();
         
+	TriangleSides obj = new TriangleSides();    
         System.out.println(obj.classifyTriangle(side1, side2, side3));
     }
 }
