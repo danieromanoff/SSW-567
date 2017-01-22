@@ -3,7 +3,7 @@ enum Triangle
 	Equilateral,
 	Isosceles,
 	Scalene,
-	None
+	Not_Triangle
 }
 class TriangleClassification
 { 
@@ -19,9 +19,26 @@ public class TriangleClassifier
 {
 	public static void main(String[] args)
 	{
-			TriangleClassification tri =  classifyTriangle(2,3,8);
-			System.out.println(tri.type);
-			System.out.println(tri.rightAngle);
+			TriangleClassification tri1 =  classifyTriangle(2,3,8);
+			TriangleClassification tri2 =  classifyTriangle(2,2,3);
+			TriangleClassification tri3 =  classifyTriangle(3,3,3);
+			TriangleClassification tri4 =  classifyTriangle(5,5,8);
+			TriangleClassification tri5 =  classifyTriangle(6,8,10);
+			System.out.println("Triangle 1: (2,3,8)");
+			System.out.println("Triangle Class: "+tri1.type);
+			System.out.println("Right Angles: "+String.valueOf(tri1.rightAngle)+'\n');
+			System.out.println("Triangle 2: (2,2,3)");
+			System.out.println("Triangle Class: "+tri2.type);
+			System.out.println("Right Angles: "+String.valueOf(tri2.rightAngle)+'\n');
+			System.out.println("Triangle 3: (3,3,3)");
+			System.out.println("Triangle Class: "+tri3.type);
+			System.out.println("Right Angles: "+String.valueOf(tri3.rightAngle)+'\n');
+			System.out.println("Triangle 4: (5,5,8)");
+			System.out.println("Triangle Class: "+tri4.type);
+			System.out.println("Right Angles: "+String.valueOf(tri4.rightAngle)+'\n');
+			System.out.println("Triangle 5: (6,8,10)");
+			System.out.println("Triangle Class: "+tri5.type);
+			System.out.println("Right Angles: "+String.valueOf(tri5.rightAngle)+'\n');
 		
 	}
 	static TriangleClassification classifyTriangle(double a,double b,double c)
@@ -30,7 +47,7 @@ public class TriangleClassifier
 		// has to be greater than the difference of the other sides)
 		if(a<=0 || b<=0 || c<= 0 || a>b+c || a<Math.abs(b-c) || b>a+c || b<Math.abs(a-c) || c>a+b || c<Math.abs(a-b))
 		{
-			return new TriangleClassification(Triangle.None,false); 
+			return new TriangleClassification(Triangle.Not_Triangle,false); 
 		}
 		//all sides are equal (Equilateral) (can't have a right angle)
 		else if(a==b&&b==c)

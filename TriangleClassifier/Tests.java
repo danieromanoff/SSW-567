@@ -41,14 +41,14 @@ public class Tests {
   public void NotTriangle1() 
   {
   	TriangleClassification tri =  TriangleClassifier.classifyTriangle(-1,100,0);
-    assertEquals(Triangle.None,tri.type);
+    assertEquals(Triangle.Not_Triangle,tri.type);
     assertEquals(false,tri.rightAngle);
   }
     @Test
   public void NotTriangle2() 
   {
   	TriangleClassification tri =  TriangleClassifier.classifyTriangle(1,1,10);
-    assertEquals(Triangle.None,tri.type);
+    assertEquals(Triangle.Not_Triangle,tri.type);
     assertEquals(false,tri.rightAngle);
   }
 
