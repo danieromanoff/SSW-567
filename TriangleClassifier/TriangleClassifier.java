@@ -45,7 +45,8 @@ public class TriangleClassifier
 	{
 		//Applying Triangle properties (length of a side has to be less than the sum of the other sides, and length of a side
 		// has to be greater than the difference of the other sides)
-		if(a<=0 || b<=0 || c<= 0 || a>b+c || a<Math.abs(b-c) || b>a+c || b<Math.abs(a-c) || c>a+b || c<Math.abs(a-b))
+		// As requested, added a bug by commenting the code that checks if the length of the sides is greater than zero
+		if(/*a<=0 || b<=0 || c<= 0 ||*/ a>b+c || a<Math.abs(b-c) || b>a+c || b<Math.abs(a-c) || c>a+b || c<Math.abs(a-b))
 		{
 			return new TriangleClassification(Triangle.Not_Triangle,false); 
 		}

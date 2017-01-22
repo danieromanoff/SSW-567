@@ -40,7 +40,7 @@ public class Tests {
     @Test
   public void NotTriangle1() 
   {
-  	TriangleClassification tri =  TriangleClassifier.classifyTriangle(-1,100,0);
+  	TriangleClassification tri =  TriangleClassifier.classifyTriangle(0,0,0);
     assertEquals(Triangle.Not_Triangle,tri.type);
     assertEquals(false,tri.rightAngle);
   }
