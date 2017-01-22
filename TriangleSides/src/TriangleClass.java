@@ -8,8 +8,7 @@ public class TriangleSides
  
         int side1, side2, side3;
  
-        System.out.println("\nTo determine the type of triangle please enter the lengths of the sides. " +
-                           "\nEach length MUST be entered in INCREASING order of size.\n");
+        System.out.println("\nTo determine the type of triangle please enter the lengths of the sides. ");
  
         System.out.println("Side 1: ");
         side1 = keyboard.nextInt();
@@ -22,7 +21,7 @@ public class TriangleSides
  
         //To check to see if it is an triangle
        // The sum of two smaller sides must be greater than the longest side to be a triangle
-        if((side1 + side2 > side3))
+        if((side1 + side2 > side3) && (side1 + side3 > side2) && (side2 + side3 > side1)
         {
             //To check to see if it an Equilateral triangle (3 equal sides)
             if((side1==side2) && (side2==side3))
