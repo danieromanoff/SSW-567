@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class TriangleSides
 {
@@ -26,19 +27,19 @@ public class TriangleSides
             //To check to see if it an Equilateral triangle (3 equal sides)
             if((side1==side2) && (side2==side3))
             {
-               System.out.print("\n RESULT: An Equilateral Triangle.");
+               System.out.print("\n RESULT: This is an Equilateral Triangle.");
             }//if
  
             //To check to see if it is an Isosceles triangle (2 of the same size and 1 different)
             else if ((side1 == side2) & (side2 != side3) || (side2 == side3) & (side3!= side1))
             {
-                System.out.print("\n RESULT: An Isosceles Triangle.");
+                System.out.print("\n RESULT: This is an Isosceles Triangle.");
             }//else if
  
                  //To check to see if it is a Scalene triangle (3 different sizes)
                  else if((side1 != side2) & (side2 != side3))
                  {
-                    System.out.print("\n RESULT: A Scalene Triangle.");
+                    System.out.print("\n RESULT: This is a Scalene Triangle.");
                  }//else if
  
         }//if
@@ -47,10 +48,9 @@ public class TriangleSides
         //When it is not a triangle it will print this.
         else
         {
-            System.out.print("\n RESULT: This Triangle is NOT possible.");
+            System.out.print("\n RESULT: These side lengths do not form a triangle.");
         }//else
  
  
     }//main
 }//class
-
