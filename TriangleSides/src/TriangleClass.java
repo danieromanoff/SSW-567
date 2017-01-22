@@ -27,39 +27,39 @@ public class TriangleSides
             if((side1==side2) && (side2==side3))
             {
                System.out.print("\n RESULT: This is an Equilateral Triangle.");
-            }//if
+            }
  
             //To check to see if it is an Isosceles triangle (2 of the same size and 1 different)
             else if ((side1 == side2) & (side2 != side3) || (side2 == side3) & (side3!= side1))
             {
                 System.out.print("\n RESULT: This is an Isosceles Triangle.");
-            }//else if
+            }
  
                  //To check to see if it is a Scalene triangle (3 different sizes)
                  else if((side1 != side2) & (side2 != side3))
                  {
                     System.out.print("\n RESULT: This is a Scalene Triangle.");
-                 }//else if
+                 }
             
             // Checking if the triangle is a right triangle
             if ((Math.pow(side1,2)+Math.pow(side2,2)==Math.pow(side3,2)) || (Math.pow(side1,2)+Math.pow(side3,2)==Math.pow(side2,2)) || (Math.pow(side2,2)+Math.pow(side3,2)==Math.pow(side2,2)))
             		{
             	System.out.print("\n RESULT: This is a Right Triangle.");
-            		}//if
+            		}
             else 
             {
             	System.out.print("\n RESULT: The is not a Right Triangle.");
             }
  
-        }//if
+        }
  
         //Sum of two smaller sides is smaller than the longest side
         //When it is not a triangle it will print this.
         else
         {
             System.out.print("\n RESULT: These side lengths do not form a triangle.");
-        }//else
+        }
  
  
-    }//main
-}//class
+    }
+}
