@@ -40,6 +40,16 @@ public class TriangleSides
                  {
                     System.out.print("\n RESULT: This is a Scalene Triangle.");
                  }//else if
+            
+            // Checking if the triangle is a right triangle
+            if ((Math.pow(side1,2)+Math.pow(side2,2)==Math.pow(side3,2)) || (Math.pow(side1,2)+Math.pow(side3,2)==Math.pow(side2,2)) || (Math.pow(side2,2)+Math.pow(side3,2)==Math.pow(side2,2)))
+            		{
+            	System.out.print("\n RESULT: This is a Right Triangle.");
+            		}//if
+            else 
+            {
+            	System.out.print("\n RESULT: The is not a Right Triangle.");
+            }
  
         }//if
  
