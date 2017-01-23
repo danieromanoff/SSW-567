@@ -1,7 +1,17 @@
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+import org.junit.Before;
 import java.lang.Math;
 public class Tests {
+	
+  @Before
+	public void Before()
+	{
+		int a = 1, b = 1 , c = 1;
+		TriangleClassification tri = TriangleClassifier.classifyTriangle(a,b,c);
+		assertEquals(Triangle.Equilateral,tri.type);
+	}
+  
   @Test
   public void Equilateral() 
   {
@@ -16,6 +26,7 @@ public class Tests {
     assertEquals(Triangle.Isosceles,tri.type);
     assertEquals(true,tri.rightAngle);
   }
+  
   @Test
   public void Isosceles() 
   {
@@ -23,6 +34,7 @@ public class Tests {
     assertEquals(Triangle.Isosceles,tri.type);
     assertEquals(false,tri.rightAngle);
   }
+  
   @Test
   public void Scalene() 
   {
@@ -30,7 +42,8 @@ public class Tests {
     assertEquals(Triangle.Scalene,tri.type);
     assertEquals(false,tri.rightAngle);
   }
-    @Test
+  
+  @Test
   public void ScaleneWithRightAngle() 
   {
   	TriangleClassification tri =  TriangleClassifier.classifyTriangle(6,8,10);
@@ -44,12 +57,19 @@ public class Tests {
     assertEquals(Triangle.Not_Triangle,tri.type);
     assertEquals(false,tri.rightAngle);
   }
-    @Test
+  
+  @Test
   public void NotTriangle2() 
   {
   	TriangleClassification tri =  TriangleClassifier.classifyTriangle(1,1,10);
     assertEquals(Triangle.Not_Triangle,tri.type);
     assertEquals(false,tri.rightAngle);
   }
+  
+  @Test(timeout=1)
+	public void Performance()
+	{
+		TriangleClassification tri = TriangleClassifier.classifyTriangle(10,50,10);
+	}
 
 }
